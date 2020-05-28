@@ -1,25 +1,30 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class ShipMovement : MonoBehaviour
 {
-    [SerializeField] float TurnSpeed = 5f;
+    [Header("General")]
+    [SerializeField] float TurnSpeed = 20f;
+    
+    [Header("Movement restriction")]
     [SerializeField] float UpperRestriction = 12f;
     [SerializeField] float LowerRestriction = -12f;
-    [SerializeField] float LeftRestriction = -20f;
-    [SerializeField] float RightRestriction = 20f;
+    [SerializeField] float LeftRestriction = -22f;
+    [SerializeField] float RightRestriction = 22f;
+    [Header("Rotations")]
     [SerializeField] float XRotateValue = -1.35f;
-    [SerializeField] float YRotateValue = 1f;
-    [SerializeField] float ThrowRotateValue = 10f;
+    [SerializeField] float YRotateValue = 1.5f;
+    [SerializeField] float ThrowRotateValue = -20f;
 
+    
     float HorizontalThrow = 0f;
     float VerticalThrow = 0f;
+    
 
     void Update()
     {
+        ShipStatus shipStatus = GetComponent<ShipStatus>();
+        if (!shipStatus.IsAllive) return;
         UpdateLocalPosition();
         UpdateLocalRotate();
     }
@@ -48,4 +53,5 @@ public class ShipMovement : MonoBehaviour
                                               Mathf.Clamp(FutureYPosition, LowerRestriction, UpperRestriction),
                                               transform.localPosition.z);
     }
+    
 }
