@@ -6,21 +6,32 @@ using UnityEngine.SceneManagement;
 public class ShipCollisionHandler : MonoBehaviour
 {
     [SerializeField] float DeathDelay = 2f;
+    [SerializeField] GameObject ExplosionFXPrefab;
+    private bool IsExploded = false;
 
-
-    // depends on kinematic setting in players ship rigidebody
     private void OnCollisionEnter(Collision collision)
         
     {
         //GameObject explosionGameObj;
         ShipStatus shipStatus = GetComponent<ShipStatus>();
-        ParticleSystem explosionParticles = GameObject.Find("explosion").GetComponent<ParticleSystem>();
+        
         shipStatus.IsAllive = false;
-        explosionParticles.Play();
         print("collided");
-
+        if (!IsExploded)
+        {
+            Explode();
+        }
+        
         Invoke("ReloadScene", DeathDelay);
     }
+
+    private void Explode()
+    {
+        GameObject ExplosionFX = Instantiate(ExplosionFXPrefab, transform.position, Quaternion.identity);
+        ExplosionFX.transform.parent = transform;
+        ExplosionFX.SetActive(true);
+        IsExploded = true;
+    }   
 
     private void ReloadScene()
     {
