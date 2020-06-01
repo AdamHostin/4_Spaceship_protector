@@ -28,7 +28,7 @@ public class ShipCollisionHandler : MonoBehaviour
     private void Explode()
     {
         GameObject ExplosionFX = Instantiate(ExplosionFXPrefab, transform.position, Quaternion.identity);
-        ExplosionFX.transform.parent = transform;
+        //ExplosionFX.transform.parent = transform;
         ExplosionFX.SetActive(true);
         IsExploded = true;
     }   
