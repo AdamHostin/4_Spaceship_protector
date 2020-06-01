@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class ShipCollisionHandler : MonoBehaviour
 {
     [SerializeField] float DeathDelay = 2f;
+    #pragma warning disable 0649 //Field 'ShipCollisionHandler.ExplosionFXPrefab' is never assigned to, and will always have its default value null
     [SerializeField] GameObject ExplosionFXPrefab;
+    #pragma warning disable 0649
     private bool IsExploded = false;
 
     private void OnCollisionEnter(Collision collision)

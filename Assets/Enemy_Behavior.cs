@@ -8,6 +8,7 @@ public class Enemy_Behavior : MonoBehaviour
     #pragma warning disable 0649 //Field 'ShipCollisionHandler.ExplosionFXPrefab' is never assigned to, and will always have its default value null
     [SerializeField] GameObject ExplosionFXPrefab;
     #pragma warning disable 0649
+
     [SerializeField] float Delay = 1.5f;
     private ParticleSystem ExplosionParticles;
     private bool IsAllive = true;
