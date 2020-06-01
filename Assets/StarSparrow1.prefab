@@ -2945,7 +2945,7 @@ GameObject:
   - component: {fileID: 1502614558}
   m_Layer: 0
   m_Name: StarSparrow1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3053,7 +3053,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c66007e97e61e47ba2199bb5b4d4bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScorePointsOnDeath: -10
   IsAllive: 1
+  ReloadLevelOnDeath: 0
 --- !u!114 &1502614558
 MonoBehaviour:
   m_ObjectHideFlags: 0
