@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class ShipMovement : MonoBehaviour
@@ -15,6 +16,8 @@ public class ShipMovement : MonoBehaviour
     [SerializeField] float XRotateValue = -1.35f;
     [SerializeField] float YRotateValue = 1.5f;
     [SerializeField] float ThrowRotateValue = -20f;
+    [Header("LaserGuns")]
+    [SerializeField] GameObject[] LaserGuns;
 
     
     float HorizontalThrow = 0f;
@@ -27,6 +30,25 @@ public class ShipMovement : MonoBehaviour
         if (!shipStatus.IsAllive) return;
         UpdateLocalPosition();
         UpdateLocalRotate();
+        UpdateFire();
+    }
+
+    private void UpdateFire()
+    {
+        if (CrossPlatformInputManager.GetButton("Fire1"))
+        {
+            foreach (GameObject LaserGun in LaserGuns)
+            {
+                LaserGun.SetActive(true);
+            }
+        }
+        else
+        {
+            foreach (GameObject LaserGun in LaserGuns)
+            {
+                LaserGun.SetActive(false);
+            }
+        }
     }
 
     private void UpdateLocalRotate()

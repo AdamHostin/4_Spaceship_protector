@@ -61,7 +61,7 @@ public class ScoreBehavior : MonoBehaviour
 
     private void DisplayScore()
     {
-        print("CurrentScoreIs " + score.ToString());
+        //print("CurrentScoreIs " + score.ToString());
         Text scoreText = GetComponent<Text>();
         scoreText.text = score.ToString();
     }

@@ -3041,6 +3041,9 @@ MonoBehaviour:
   XRotateValue: -1.35
   YRotateValue: 1.5
   ThrowRotateValue: -20
+  LaserGuns:
+  - {fileID: 3895092592124676408}
+  - {fileID: 359522328893072217}
 --- !u!114 &1502614557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3056,6 +3059,9 @@ MonoBehaviour:
   ScorePointsOnDeath: -10
   IsAllive: 1
   ReloadLevelOnDeath: 0
+  DefaultLocalPositionX: 0
+  DefaultLocalPositionY: 0
+  DefaultLocalPositionZ: 0
 --- !u!114 &1502614558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3530,7 +3536,7 @@ PrefabInstance:
     - target: {fileID: 3337921005214740720, guid: 9914beda01f4d8c4f92e6f8769ddd3bd,
         type: 3}
       propertyPath: m_Name
-      value: lasers (1)
+      value: RightLaser
       objectReference: {fileID: 0}
     - target: {fileID: 437836507122100817, guid: 9914beda01f4d8c4f92e6f8769ddd3bd,
         type: 3}
@@ -3589,6 +3595,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9914beda01f4d8c4f92e6f8769ddd3bd, type: 3}
+--- !u!1 &3895092592124676408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3337921005214740720, guid: 9914beda01f4d8c4f92e6f8769ddd3bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1755431247736961480}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2183975960176399257 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 437836507122100817, guid: 9914beda01f4d8c4f92e6f8769ddd3bd,
@@ -3605,7 +3617,7 @@ PrefabInstance:
     - target: {fileID: 3337921005214740720, guid: 9914beda01f4d8c4f92e6f8769ddd3bd,
         type: 3}
       propertyPath: m_Name
-      value: lasers
+      value: LeftLaser
       objectReference: {fileID: 0}
     - target: {fileID: 437836507122100817, guid: 9914beda01f4d8c4f92e6f8769ddd3bd,
         type: 3}
@@ -3664,6 +3676,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9914beda01f4d8c4f92e6f8769ddd3bd, type: 3}
+--- !u!1 &359522328893072217 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3337921005214740720, guid: 9914beda01f4d8c4f92e6f8769ddd3bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 3075935314592502697}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3223569239527422456 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 437836507122100817, guid: 9914beda01f4d8c4f92e6f8769ddd3bd,
