@@ -11,6 +11,7 @@ public class Enemy_Behavior : MonoBehaviour
     [SerializeField] int FullHealth = 100;
     [SerializeField] int ScorePointsOnDeath = 5;
     [SerializeField] float Delay = 1.5f;
+    [SerializeField] int UnknownDamageValue = 50;
 
     private ParticleSystem ExplosionParticles;
     private int CurrentHealth;
@@ -43,7 +44,7 @@ public class Enemy_Behavior : MonoBehaviour
         else
         {
             print("Unknown Origin of Damage");
-            Damage = 50;
+            Damage = UnknownDamageValue;
         }
        
         return Damage;
