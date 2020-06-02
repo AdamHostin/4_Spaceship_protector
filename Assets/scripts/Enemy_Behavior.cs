@@ -8,21 +8,22 @@ public class Enemy_Behavior : MonoBehaviour
     #pragma warning disable 0649 //Field 'ShipCollisionHandler.ExplosionFXPrefab' is never assigned to, and will always have its default value null
     [SerializeField] GameObject ExplosionFXPrefab;
 #pragma warning disable 0649
-    [SerializeField] int health = 100;
+    [SerializeField] int FullHealth = 100;
     [SerializeField] int ScorePointsOnDeath = 5;
     [SerializeField] float Delay = 1.5f;
 
     private ParticleSystem ExplosionParticles;
-    private bool IsAllive = true;
+    private int CurrentHealth;
 
-    
+    private void Start()
+    {
+        CurrentHealth = FullHealth;
+    }
     private void OnParticleCollision(GameObject other)
     {
-
-        
-        if (!IsAllive) return;
-
-        IsAllive = false;
+        int Damage = GetDamageValue(other);
+        CurrentHealth -= Damage;
+        if (CurrentHealth>0) return;
 
         DestroyChildrenCollider();              
         IncreasePlayerScore(ScorePointsOnDeath);
@@ -31,6 +32,24 @@ public class Enemy_Behavior : MonoBehaviour
         Invoke("DestroyEnemy", Delay);
         
     }
+    private int GetDamageValue(GameObject Projectile)
+    {
+        int Damage;
+        WeaponStatus AttackersWeapon = Projectile.GetComponent<WeaponStatus>();
+        if(AttackersWeapon != null)
+        {
+            Damage = AttackersWeapon.DamagePerHit;
+        }
+        else
+        {
+            print("Unknown Origin of Damage");
+            Damage = 50;
+        }
+       
+        return Damage;
+    }
+
+
     private void Exploade()
     {
         //Create and acitvate instance of an Explosion

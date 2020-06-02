@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaserStatus : MonoBehaviour
+public class WeaponStatus : MonoBehaviour
 {
-    [SerializeField] int DamagePerHit = 35;
+    public int DamagePerHit = 35;
 }

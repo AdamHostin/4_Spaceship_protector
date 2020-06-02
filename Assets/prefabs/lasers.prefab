@@ -3625,7 +3625,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3729,7 +3729,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     minKillSpeed: 1
-    maxKillSpeed: 10000
+    maxKillSpeed: 1000
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
@@ -4766,3 +4766,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b915006dd59592f4e981127c1356cdbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DamagePerHit: 35
