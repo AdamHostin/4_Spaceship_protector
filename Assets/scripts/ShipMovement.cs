@@ -22,7 +22,7 @@ public class ShipMovement : MonoBehaviour
     
     float HorizontalThrow = 0f;
     float VerticalThrow = 0f;
-    
+    private bool IsShooting = false;
 
     void Update()
     {
@@ -37,17 +37,37 @@ public class ShipMovement : MonoBehaviour
     {
         if (CrossPlatformInputManager.GetButton("Fire1"))
         {
-            foreach (GameObject LaserGun in LaserGuns)
+            if (!IsShooting)
             {
-                LaserGun.SetActive(true);
+                EnableWeapons();
+                IsShooting = true;
             }
+
         }
         else
         {
-            foreach (GameObject LaserGun in LaserGuns)
+            if (IsShooting)
             {
-                LaserGun.SetActive(false);
+                DisableWeapons();
+                IsShooting = false;
             }
+            
+        }
+    }
+
+    private void DisableWeapons()
+    {
+        foreach (GameObject LaserGun in LaserGuns)
+        {
+            LaserGun.GetComponent<ParticleSystem>().Stop();
+        }
+    }
+
+    private void EnableWeapons()
+    {
+        foreach (GameObject LaserGun in LaserGuns)
+        {
+            LaserGun.GetComponent<ParticleSystem>().Play();
         }
     }
 
