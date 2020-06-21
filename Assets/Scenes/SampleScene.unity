@@ -1264,7 +1264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1502614557, guid: 0478b1e28fd9831458b0f051b9d2ad8b, type: 3}
       propertyPath: ReloadLevelOnDeath
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0478b1e28fd9831458b0f051b9d2ad8b, type: 3}
@@ -1584,6 +1584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c43bf0d50081a41b5873b686606061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Delay: 0.5
 --- !u!1 &978446272
 GameObject:
   m_ObjectHideFlags: 0
